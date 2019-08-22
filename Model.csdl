@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GHARPARAPPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerSno" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerPhone" />
+      <PropertyRef Name="CustomerCNIC" />
+      <PropertyRef Name="CustomerEmail" />
+      <PropertyRef Name="CustomerAddress" />
+      <PropertyRef Name="CustomerPassword" />
+    </Key>
+    <Property Name="CustomerSno" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerPhone" Type="Int32" Nullable="false" />
+    <Property Name="CustomerCNIC" Type="Int32" Nullable="false" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerReview" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="EmpDept" />
+      <PropertyRef Name="EmpPhone" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmpDept" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmpPhone" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HomeService">
+    <Key>
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="Services" />
+      <PropertyRef Name="Charges" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Charges" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GHARPARAPPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="HomeServices" EntityType="Self.HomeService" />
+  </EntityContainer>
+</Schema>

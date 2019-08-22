@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GHARPARAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'GHARPARAPP.dbo.CookingServices' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CookingServices">
+          <Property Name="Sno" Type="int" />
+          <Property Name="Services" Type="nvarchar" MaxLength="50" />
+          <Property Name="Charges" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GHARPARAPP.dbo.Customer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerSno" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerPhone" />
+      <PropertyRef Name="CustomerCNIC" />
+      <PropertyRef Name="CustomerEmail" />
+      <PropertyRef Name="CustomerAddress" />
+      <PropertyRef Name="CustomerPassword" />
+    </Key>
+    <Property Name="CustomerSno" Type="int" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerPhone" Type="int" Nullable="false" />
+    <Property Name="CustomerCNIC" Type="int" Nullable="false" />
+    <Property Name="CustomerEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerReview" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GHARPARAPP.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+      <PropertyRef Name="EmpName" />
+      <PropertyRef Name="EmpDept" />
+      <PropertyRef Name="EmpPhone" />
+    </Key>
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDept" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmpPhone" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'GHARPARAPP.dbo.HomeServices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HomeServices">
+    <Key>
+      <PropertyRef Name="Sno" />
+      <PropertyRef Name="Services" />
+      <PropertyRef Name="Charges" />
+    </Key>
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="Services" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Charges" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'GHARPARAPP.dbo.MakeupServices' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MakeupServices">
+          <Property Name="Sno" Type="int" />
+          <Property Name="Services" Type="nvarchar" MaxLength="50" />
+          <Property Name="Charges" Type="int" />
+        </EntityType>-->
+  <EntityContainer Name="GHARPARAPPModelStoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Customer].[CustomerSno] AS [CustomerSno], 
+    [Customer].[CustomerName] AS [CustomerName], 
+    [Customer].[CustomerPhone] AS [CustomerPhone], 
+    [Customer].[CustomerCNIC] AS [CustomerCNIC], 
+    [Customer].[CustomerEmail] AS [CustomerEmail], 
+    [Customer].[CustomerAddress] AS [CustomerAddress], 
+    [Customer].[CustomerReview] AS [CustomerReview], 
+    [Customer].[CustomerPassword] AS [CustomerPassword]
+    FROM [dbo].[Customer] AS [Customer]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Employee].[EmpId] AS [EmpId], 
+    [Employee].[EmpName] AS [EmpName], 
+    [Employee].[EmpDept] AS [EmpDept], 
+    [Employee].[EmpPhone] AS [EmpPhone]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="HomeServices" EntityType="Self.HomeServices" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HomeServices].[Sno] AS [Sno], 
+    [HomeServices].[Services] AS [Services], 
+    [HomeServices].[Charges] AS [Charges]
+    FROM [dbo].[HomeServices] AS [HomeServices]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

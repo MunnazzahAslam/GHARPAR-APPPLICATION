@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GHARPARAPPModelStoreContainer" CdmEntityContainer="GHARPARAPPEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="GHARPARAPPModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerSno" ColumnName="CustomerSno" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerReview" ColumnName="CustomerReview" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="GHARPARAPPModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpDept" ColumnName="EmpDept" />
+          <ScalarProperty Name="EmpPhone" ColumnName="EmpPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeServices">
+      <EntityTypeMapping TypeName="GHARPARAPPModel.HomeService">
+        <MappingFragment StoreEntitySet="HomeServices">
+          <ScalarProperty Name="Sno" ColumnName="Sno" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="Charges" ColumnName="Charges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
